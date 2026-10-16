@@ -1,0 +1,185 @@
+\documentclass[10.5pt,a4paper]{article}
+
+\usepackage[margin=0.65in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+\definecolor{navy}{HTML}{1A2B4C}
+\definecolor{graytext}{HTML}{555555}
+\definecolor{lightgray}{HTML}{888888}
+\definecolor{darktext}{HTML}{2A2A2A}
+
+\titleformat{\section}
+  {\large\bfseries\color{navy}}
+  {}{0em}{}
+  [\vspace{2pt}\titlerule\vspace{4pt}]
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\newcommand{\jobheader}[3]{%
+  \noindent
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l r}
+    \textbf{\large #1} & {\itshape\color{lightgray} #3} \\
+  \end{tabular*}\par
+}
+
+% #1 = title, #2 = company, #3 = dates, #4 = location
+\newcommand{\jobentry}[4]{%
+  \jobheader{#1 \ --- \ \textbf{#2}}{}{#3}
+  {\color{graytext} #4}\par\vspace{2pt}
+}
+
+\newcommand{\techline}[1]{%
+  {\small\itshape\color{blue} Tech: #1}\par\vspace{6pt}
+}
+
+% current state of a company, shown after its name
+\newcommand{\status}[1]{\ {\normalfont\small\itshape\color{lightgray}(#1)}}
+
+% #1 = qualification, #2 = institution, #3 = dates, #4 = grade
+\newcommand{\eduentry}[4]{%
+  \noindent
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l r}
+    \textbf{#1} & {\itshape\color{lightgray} #3} \\
+  \end{tabular*}\par
+  {\color{graytext} #2 \ | \ #4}\par\vspace{4pt}
+}
+
+
+
+
+\begin{document}
+
+% ---------- Header ----------
+{\Huge\bfseries\color{navy} Deepak Kumar N D}\par
+\vspace{2pt}
+{\large\color{graytext} Full-stack software engineer, building products with a focus on scaling, resilience and self-healing.}\par
+\vspace{2pt}
+{\small\color{graytext}
+Kochi, Kerala, India \ | \ +91 9895821948 \ | \ \href{mailto:deepakkumarnd@gmail.com}{deepakkumarnd@gmail.com} \\
+\href{https://deepsnapster.com}{deepsnapster.com} \ | \
+\href{https://linkedin.com/in/deepakkumarnd}{linkedin.com/in/deepakkumarnd} \ | \
+\href{https://github.com/deepakkumarnd}{github.com/deepakkumarnd}
+
+}\par
+\vspace{6pt}
+
+% ---------- Summary ----------
+\section{Summary}
+I'm a full stack software engineer with 14+ years of experience with a major focus on backend engineering, I have worked on products in three major domains Fintech, Ad-Tech, and Ed-Tech.
+
+I have extensive background in scaling distributed systems, micorservice using cloud infrastructure. More recently, I have been building intelligent systems with LLM models using AI agents building RAG and MCP. I have explored embeddings, and agentic software architectures to understand the blackbox better.
+
+I have worked with both startups and enterprises alike, experienced ups and downs with them. Throughout my career, I've worked across from writing production code, designing architectures, mentoring junior engineers, shaping technical direction, and turning ambiguous product vision into practical systems.
+
+\section{Major Skills}
+\begin{tabular}{@{}p{2.05in}p{4.85in}@{}}
+\textbf{Languages} & Ruby, TypeScript, JavaScript, Python, Scala \\[4pt]
+\textbf{Frameworks} & Ruby on Rails, Hapi.js, Playframework, FastAPI, React, NextJS \\[4pt]
+\textbf{Agents} & RubyLLM, Google ADK, Vercel AI SDK, Vercel Eve, MCP \\[4pt]
+\textbf{Workflows} & Temporal Workflows, Vercel Workflows \\[4pt]
+\textbf{Deployment} & AWS ECS on Fargate, GCP, Beanstalk, Capistrano on raw EC2 instances \\[4pt]
+\textbf{Databases} & MySQL, PostgreSQL, Cassandra, MongoDB, ScyllaDB \\[4pt]
+\textbf{Caching} & Redis, Memcached \\[4pt]
+\textbf{Queue} & RabbitMQ, Sidekiq, Developed own queuing library \\[4pt]
+\textbf{Tools} & Docker, Git, Kubernetes \\
+\textbf{Observability} & ELK, Splunk, Prometheus and Grafana. \\
+\textbf{Domains} & Fintech, Ads, EdTech, E-Commerce, Crowdsourcing \\
+\end{tabular}
+
+% ---------- Experience ----------
+\section{Experience}
+
+\jobentry{Principal Software Engineer}{Instruo (Openvitae)}{Apr 2024 -- Present (2 yrs 4 mos)}{Kochi}
+\begin{itemize}[leftmargin=16pt, itemsep=1pt, topsep=2pt, parsep=0pt]
+  \item Joined as a founding member, developed full stack of EdTech platform for frontline workforce upskiling.
+  \item Developed Video streaming platform plus course content management.
+  \item Built an AI Content Studio module for generating videos from SOP, full course generation and bite-sized videos.
+  \item Implemented Temporal-based workflows to orchestrate long-running tasks for AI services.
+  \item Implemented AI module for generating classroom kits, trainer decks, learner workbooks, assessments, and quizzes.
+  \item Implemented an experimental 3D virtual training sessions.
+\end{itemize}
+\techline{Ruby on Rails, NextJS, RubyLLM, Google ADK, Temporal Workflows, FastAPI, Python, ECS}
+
+\jobentry{Chief Technology Officer}{SuperHire (Openvitae)}{Aug 2022 -- Mar 2024 (1 yr 8 mos)}{Kochi\status{pivoted}}
+\begin{itemize}[leftmargin=16pt, itemsep=1pt, topsep=2pt, parsep=0pt]
+  \item Scaled the team from 3 engineers to 12 in one year.
+  \item Spearheaded the development.
+  \item Rebuilt the platform - Curated crowdsourcing platform for candidate sourcing.
+  \item Brought in observability by brining in analytics and telemetry to the platform.
+\end{itemize}
+\techline{TypeScript, Hapi.js, Prisma, React and AWS ECS.}
+
+\jobentry{Staff Software Engineer}{Truecaller}{Feb 2020 -- Aug 2022 (2 yrs 7 mos)}{Bangalore\status{listed on Nasdaq Stockholm, 2021}}
+\begin{itemize}[leftmargin=16pt, itemsep=1pt, topsep=2pt, parsep=0pt]
+  \item Developed in-house self-serve Ad-server platform, includues management of accounts, orders, campaigns, and creatives.
+  \item Ad network integrations - Google Ads, InMobi ads, Kaizen.
+  \item Ad serving optimization based on targeting parameters and yield parameters to maximize revenue.
+  \item Offline ads and ad-formats - Developed APIs and server-driven UI rendering for offline ads and proprietary ad formats.
+\end{itemize}
+\techline{Playframework, Cassandra, Kafka, Aerospike, ScyllaDB, Scale, Akka, Java}
+
+\jobentry{Senior Software Engineer}{Truecaller}{Oct 2017 -- Feb 2020 (2 yrs 5 mos)}{Bengaluru, Stockholm\status{listed on Nasdaq Stockholm, 2021}}
+\begin{itemize}[leftmargin=16pt, itemsep=1pt, topsep=2pt, parsep=0pt]
+  \item Lead a team of 10-15 engineers and built single responsibility micorservice layer for payments.
+  \item Worked on UPI based payments developed a adapter layer for smoothening bank integrations.
+  \item Integrated Bharath bill payments.
+  \item Architected a microloan product within the payment module.
+  \item Architected a transaction reconciliation system for post-payment processing.
+  \item Migrated backend infrastructure from AWS EC2 instances to Kubernetes containers on GCP.
+  \item Brought in observability by bringing in ELK stack.
+\end{itemize}
+\techline{Ruby on Rails, Microservices, ELK Stack, Kubernetes on GCP, MongoDB, RabbitMQ, Memcahed}
+
+\jobentry{Senior Software Engineer}{Chillr}{May 2015 -- Sep 2017 (2 yrs 5 mos)}{Kochi, Mumbai\status{acquired by Truecaller}}
+\begin{itemize}[leftmargin=16pt, itemsep=1pt, topsep=2pt, parsep=0pt]
+  \item Migrated manual deployment process to Jenkins based automated CI/CD.
+  \item Worked on IMPS and UPI payments related bank integration.
+  \item Architected online merchant payments APIs and Javascript SDK.
+  \item IMPS based In-store (QR code) payments.
+  \item Scaled SMS delivery and queuing by migraitng Delayed Jobs to RabbitMQ based consumers, build an in house ruby library for auto scaling workers.
+  \item Architected an expense-splitting feature within the Chillr app, similar to Splitwise.
+  \item Worked on MassPay a product for large number of payout for example salary payouts.
+\end{itemize}
+\techline{Monolith API backend in Ruby on Rails, MongoDB, Memcached, RabbitMQ, Splunk, AWS EC2}
+
+{\bfseries\color{navy} Early Career}\par\vspace{2pt}
+\begin{itemize}[leftmargin=16pt, itemsep=1pt, topsep=2pt, parsep=0pt]
+  \item \textbf{Software Engineer, 3Dify}\status{closed} (Apr 2014 -- Apr 2015, Kerala Startup Mission, Kochi) --- First tech employee at a startup, built an online marketplace for 3D printed products. Worked on PayU payment gateway integration. \\
+  \techline{Ruby On Rails, JS, CSS, handlebar templates, Three.js }
+  \item \textbf{Software Engineer, WowMakers}\status{active} (Oct 2012 -- Mar 2014, Startup Village, Kochi) --- Worked on a design-crowdsourcing platform (crowdstudio) similar to 99designs, Worked on user onboarding, campaign management and deployed on AWS EC2 instances, worked on server bootstrapping. \\
+  \techline{Ruby On Rails, Shell scripts, MongoDB, EC2, Autoscaling Groups, Nginx}
+  \item \textbf{Junior Software Engineer, Sourcebits, Inc.}\status{services arm acquired by Globo, 2014} (Jun 2011 -- Aug 2012, Bengaluru) --- Built a cross-platform mobile app and backend using Rhomobile and Rails, worked on backend application for a golf playing game (Skinzgolf). \\
+  \techline{Ruby On Rails, Rhomobile, MongoDB, MySQL, Redis, Apache}
+\end{itemize}
+
+% ---------- Education ----------
+\section{Education}
+\eduentry{Bachelor of Technology (B.Tech.), Computer Science}{College of Engineering Trivandrum (CET), University of Kerala}{2007 -- 2011}{CGPA: 7.0}
+\eduentry{Higher Secondary School, Computer Science}{Govt. Higher Secondary School North Paravur, Kochi}{2004 -- 2006}{Distinction: 92\%}
+\eduentry{High School}{St. Aloysius High School North Paravur, Kochi}{19XX -- 2004}{Distinction: 90\%}
+
+% ---------- Certifications & Languages ----------
+\section{Certifications \& Languages}
+\begin{itemize}[leftmargin=16pt, itemsep=1pt, topsep=2pt, parsep=0pt]
+  \item Business English Course, CEFR Level B1
+  \item Truecaller Value Award for value ``Get Shit Done''
+  \item B.Tech Degree Certificate
+  \item Languages: English (Professional), Malayalam (Native/Bilingual), Hindi (Basic), Tamil (Basic)
+\end{itemize}
+
+% ---------- Family & Hobbies ----------
+\section{Family \& Hobbies}
+\begin{itemize}[leftmargin=16pt, itemsep=1pt, topsep=2pt, parsep=0pt]
+  \item Family: Married to Amrutha, with two daughters
+  \item Hobbies: Running (21K - 2 hour 40 min), Reading, Sketching, Painting
+\end{itemize}
+
+\end{document}
